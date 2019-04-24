@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class LetterGradeConverterApp {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Welcome to the Letter Grade Converter App");
+		
+		String choice = "y;"
+		while (choice.equalsIgnoreCase("y"));
+		
+		//user input
+		
+		
+		
+		//biz logic
+		
+		
+		//display results
+		
+		
+
+		
+		System.out.println("Bye!");
+
+	}
+
+}

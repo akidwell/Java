@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Repos\Java\ch02_prj2_LetterGradeConverter"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch02_ex3_Invoice"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch02_TestScore"/>
+			<item value="C:\Repos\Java\ch02_Invoice"/>
+			<item value="C:\Repos\Java"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch07_Product"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch10_Product"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch03_InvoiceBigDecimal"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

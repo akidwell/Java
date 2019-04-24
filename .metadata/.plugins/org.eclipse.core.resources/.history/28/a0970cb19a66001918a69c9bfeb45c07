@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class InterestCalculatorApp {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to Interest Calc App!");
+		Scanner sc = new Scanner(sys.in)
+		String choice = "y";
+		while(choice.equalsIgnoreCase("Y")) {
+			
+		System.out.println("Continue (y/n)?");	
+		choice = sc.next();
+			
+		}
+		
+		
+		System.out.println("Bye!");
+
+	}
+
+}

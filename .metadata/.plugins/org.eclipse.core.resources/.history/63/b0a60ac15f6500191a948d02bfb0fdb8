@@ -1,0 +1,21 @@
+
+public class CalculatorProjectApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Calculator App");
+		
+	
+		int j = 7; 
+		int k = 8;
+		int result1 = j + k;
+		System.out.println("SUM:" + result1);
+		
+		int a = 7; 
+		int b = 8;
+		int result2 = j - k;
+		System.out.println("SUB:" + result2);
+
+	}
+
+}

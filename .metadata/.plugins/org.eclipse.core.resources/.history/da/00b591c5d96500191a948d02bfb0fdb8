@@ -1,0 +1,35 @@
+
+public class CalculatorProjectApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to my Calculator App");
+		
+	//define two ints
+		int a = 17; 
+		int b = 8;
+		
+	//define, sum, diff, product quotient
+		int sum = a + b;
+		int diff = a - b;
+		int product = a * b;
+		double quotient = a / b;
+		
+	// print to screen
+		
+		System.out.println("a= 17");
+		System.out.println("b= 8");
+		System.out.println();
+		System.out.println("Sum:       a + b = " + sum);
+		System.out.println("Differnce: a - b = " + diff);
+		System.out.println("Product:   a * b = " + product);
+		System.out.println("Product:   a / b = " + quotient);
+		
+		System.out.println();
+		System.out.println("Goodbye!");
+		
+		
+
+	}
+
+}

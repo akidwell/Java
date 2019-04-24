@@ -1,0 +1,39 @@
+
+public class CalculatorProjectApp {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Calculator App");
+		
+	
+		int j = 7; 
+		int k = 8;
+		int result1 = j + k;
+		System.out.println("J= 7 and k= 8");
+		System.out.println("j + k = ");
+		System.out.println(j + k);
+		System.out.println();
+		
+		int a = 10; 
+		int b = 18;
+		int result2 = b - a;
+		System.out.println("A= 10 and b= 18");
+		System.out.println("b - a = ");
+		System.out.println(b-a);
+		System.out.println();
+		
+		
+		double c = 88.5;
+		double d = 99;
+		double result3 = c * d;
+		System.out.println("c= 88.5");
+		System.out.println("d= 99");
+		System.out.println("Product:" + result3);
+		
+		
+		
+		
+
+	}
+
+}

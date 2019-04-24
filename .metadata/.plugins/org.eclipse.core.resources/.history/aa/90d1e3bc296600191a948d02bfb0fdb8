@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class StudentRegistrationApp {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Student Registration");
+		
+		//Scanner
+		Scanner sc = new Scanner(System.in);
+			
+		
+		//Prompt User input/variables
+		{System.out.print("Enter First Name:");
+		String firstName = sc.next();
+		System.out.print("Enter Last Name:");
+		String LastName = sc.next();
+		System.out.print("Enter 4-digit birth year:");
+		int birthYear = sc.nextInt();}
+		
+		//biz logic
+		
+		
+		//display results
+		System.out.println("Welcome");
+		System.out.println("Your Registration is Complete");
+		System.out.println("Your temp password is: ");
+		
+		
+		//bye
+		System.out.println();
+		System.out.println("Bye");
+
+		
+		
+		
+		
+	}
+
+}

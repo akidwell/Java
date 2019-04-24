@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class LetterGradeConverterApp {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int numericalGrade = 0;
+	    String letterGrade = " ";
+		
+		//Welcome
+	    String choice = "y";
+	    while (choice.equalsIgnoreCase("y")) {
+		System.out.println("Welcome to the Letter Grade Converter App");
+
+		
+		//user input
+		System.out.println("Enter Numerical Grade: ");
+		numericalGrade = sc.nextInt();
+		
+		// biz logic
+        if (numericalGrade >= 80 & numericalGrade <= 100) {
+            System.out.println("A");
+        } else if (numericalGrade >= 70 & numericalGrade <= 79) {
+            System.out.println("B");
+        } else if (numericalGrade >= 60 & numericalGrade <= 69) {
+            System.out.println("C");
+        } else if (numericalGrade >= 50 & numericalGrade <= 59) {
+            System.out.println("D");
+        } else if (numericalGrade >= 40 & numericalGrade <= 49) {
+            System.out.println("E");
+        } else if (numericalGrade >= 0 & numericalGrade <= 39) {
+            System.out.println("F");
+        
+            
+           //display results?
+		
+   
+            System.out.println("Continue? (y/n):");
+            choice = sc.next();
+            System.out.println();}
+	
+		//bye
+		System.out.println("Bye!");
+
+	}
+
+}
+}
