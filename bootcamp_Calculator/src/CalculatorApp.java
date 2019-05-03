@@ -30,7 +30,7 @@ public class CalculatorApp {
 				Function.quotient(valueOne, valueTwo);
 			}
 
-			Console.getChoiceString("Continue? y or n:", "y", "n");
+		choice= Console.getChoiceString("Continue? y or n:", "y", "n");
 		}
 
 		System.out.println("Bye");

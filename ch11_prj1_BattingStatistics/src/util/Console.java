@@ -1,4 +1,4 @@
-
+package util;
 import java.util.Scanner;
 
 public class Console {
@@ -110,10 +110,12 @@ public class Console {
             }
         }
         return i;
-   
-	}
+    }
 
-    public static String getRequiredString(String prompt) {
+	
+	
+
+	public static String getRequiredString(String prompt) {
         String s = "";
         boolean isValid = false;
         while (!isValid) {
