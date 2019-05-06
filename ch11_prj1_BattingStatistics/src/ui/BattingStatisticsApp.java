@@ -26,7 +26,7 @@ public class BattingStatisticsApp {
 		double nbrOverZero=0;
 		double basesEarned=0;
 		for (int i = 0; i < timesAtBat; i++) {
-			resultForAtBat[i] = Console.getInt("Result for at-bat" + (i+1) + ": ", -1, 5);
+			resultForAtBat[i] = Console.getIntWithinRange("Result for at-bat" + (i+1) + ": ", -1, 5);
 			if (resultForAtBat[i] > 0 ) {
 				nbrOverZero++;
 			}
