@@ -106,6 +106,7 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch15_ex1_CustomerManager"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch11_ex1_MonthSales"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch09_ex1_DisplayableTest"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch08_ex2_Product"/>

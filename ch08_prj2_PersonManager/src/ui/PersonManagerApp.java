@@ -49,7 +49,7 @@ public class PersonManagerApp {
 				System.out.println();
 				
 				System.out.println("You entered a new Employee: ");
-				System.out.print(e.toString());
+				System.out.print("XXX-XX-" + e.getSsn().substring(7));
 				System.out.println();
 				
 			}

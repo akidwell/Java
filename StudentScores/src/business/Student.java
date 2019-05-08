@@ -56,6 +56,7 @@ public class Student implements Comparable {
 
 		@Override
 		public int compareTo(Object o) {
+			System.out.println(1);
 			if (o instanceof Student) {
 			     return (((Student) o).getLastName().compareTo(this.lastName) == 0) ?
 		                    ((Student) o).getFirstName().compareTo(this.firstName) :

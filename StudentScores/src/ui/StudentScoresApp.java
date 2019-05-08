@@ -34,7 +34,7 @@ public class StudentScoresApp {
 			}
 
 			System.out.println("SUMMARY");
-			Arrays.sort(students, 0, numberOfStudents);
+			Arrays.sort(students);
 			for (Student s : students)
 				System.out.println(s);
 

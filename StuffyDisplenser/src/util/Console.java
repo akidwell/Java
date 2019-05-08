@@ -2,7 +2,7 @@ package util;
 import java.util.Scanner;
 
 
-public class Console {
+	public class Console {
 	private static Scanner sc = new Scanner(System.in);
     public static int getInt(String prompt) {
         int i = 0;
