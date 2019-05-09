@@ -4,6 +4,7 @@ import java.util.List;
 
 import business.Product;
 import db.DAO;
+import db.ProductDB;
 import db.ProductTextFile;
 import util.Console;
 import util.StringUtils;
@@ -14,7 +15,7 @@ public class productioManagerApp {
 //DAO is to get/use Product class, polymorphism at work.
 	// productFile gets us all crud functions in DAO and can use in text files and
 	// data bases
-	private static DAO<Product> productDAO = new ProductTextFile();
+	private static DAO<Product> productDAO = new ProductDB();
 
 	public static void main(String[] args) {
 		System.out.println("welcome to the product manager- text file edition");

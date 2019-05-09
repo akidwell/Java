@@ -1,108 +1,101 @@
 package ui;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import Business.Stuffy;
+import db.DAO;
+import db.stuffydb;
 import util.Console;
+import util.StringUtils;
+
 
 public class StuffyDispenserApp {
+	private static DAO<Stuffy> stuffyDAO = new stuffydb();
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to the Stuffy Dispenser App!");
-		System.out.println("This app will mimic the functionality of "
-							+ "a stuffy dispensing machine.  The user "
-							+ "will be able to select a Stuffy, and "
-							+ "hopefully the app will return one! ");
-		//Initialize a list of Stuffies
-// 1st iteration - Arrays
-//		Stuffy[] stuffies = new Stuffy[10];
-//		stuffies[0] = new Stuffy(1,"Dog","Blue","Large",4);
-//		stuffies[1] = new Stuffy(2,"Cat","Green","Small",4);
-//		stuffies[2] = new Stuffy(3,"Dragon","Purple","Medium",6);
-//		stuffies[3] = new Stuffy(4,"Snail","Yellow","X-Large",1);
-//		stuffies[4] = new Stuffy(5,"Platypus","Blue","Medium",4);
-//		stuffies[5] = new Stuffy(6,"Octopus","Purple","Large",8);
-//		stuffies[6] = new Stuffy(7,"Squirrel","Brown","Small",4);
-//		stuffies[7] = new Stuffy(8,"Starfish","Pink","X-Large",5);
-//		stuffies[8] = new Stuffy(9,"Lobster","Red","Large",10);
-//		stuffies[9] = new Stuffy(10,"Spider","Clear","Small",8);
-	
-		//2nd iteration - ArrayList
-		List<Stuffy> stuffies = new ArrayList<>();
-		stuffies.add(new Stuffy(1,"Dog","Blue","Large",4));
-		stuffies.add(new Stuffy(2,"Cat","Green","Small",4));
-		stuffies.add(new Stuffy(3,"Dragon","Purple","Medium",6));
-		stuffies.add(new Stuffy(4,"Snail","Yellow","X-Large",1));
-		stuffies.add(new Stuffy(5,"Platypus","Blue","Medium",4));
-		stuffies.add(new Stuffy(6,"Octopus","Purple","Large",8));
-		stuffies.add(new Stuffy(7,"Squirrel","Brown","Small",4));
-		stuffies.add(new Stuffy(8,"Starfish","Pink","X-Large",5));
-		stuffies.add(new Stuffy(9,"Lobster","Red","Large",10));
-		stuffies.add(new Stuffy(10,"Spider","Clear","Small",8));
+		
+		System.out.println("welcome to the Stuffy Dispenser App");
+		displayMenu();
+		String action = " ";
+		while (!action.equalsIgnoreCase("exit")) {
+			action = Console.getRequiredString("enter a command:  ");
 
-		//Let's print the list of stuffies so user knows the indexes
-//		for (int i = 0; i< stuffies.length; i++) {
-//			System.out.println("Stuffy "+i+": "+stuffies[i]);
-//		}
+			if (action.equalsIgnoreCase("list")) {
+				displayAllStuffies();
+			} else if (action.equalsIgnoreCase("add")) {
+				addStuffy();
+
+			} else if (action.equalsIgnoreCase("del")) {
+				deleteStuffy();
+
+			} else if (action.equalsIgnoreCase("help")) {
+				displayMenu();
+
+			} else {
+				System.out.println("invalid command");
+			}
+		}
+
+		System.out.println("bye");
+	}
+
+	public static void displayMenu() {
+		System.out.println("command menu:");
+		System.out.println("==============");
+		System.out.println("list- list all stuffies");
+		System.out.println("add-   add a stuffy");
+		System.out.println("del-   delete a stuffy");
+		System.out.println("help- 	show this menu");
+		System.out.println("exit-	exit the app");
+
+	}
+
+	private static void displayAllStuffies() {
+		System.out.println("Stuffy list:  ");
+		System.out.println("================");
+		List<Stuffy> stuffies = stuffyDAO.getAll();
+		StringBuilder sb = new StringBuilder();
 		for (Stuffy s: stuffies) {
-			System.out.println(s);
+			sb.append(StringUtils.padWithSpaces(Integer.toString(s.getId()), 5));
+			sb.append(StringUtils.padWithSpaces(s.getType(), 15));
+			sb.append(StringUtils.padWithSpaces(s.getColor(), 15));
+			sb.append(StringUtils.padWithSpaces(s.getSize(), 15));
+			sb.append(s.getLimbs());
+			sb.append("\n");
 		}
-		
-		// Loop until user wants to quit
-		String choice = "";
-		while (!choice.equalsIgnoreCase("x")) {
-			// Inside loop
-			
-			choice = Console.getRequiredString(getMenuOptions());
-			
-			if (choice.equalsIgnoreCase("s")) {
-				// 1)  Prompt for user input ("Pick a stuffy")
-				int selectionNbr = Console.getIntWithinRange("Pick a stuffy by number: ",
-						0, stuffies.size()+1);
-				//selectionNbr--;
-				
-				// 2)  Do business logic (retrieve a stuffy from the list)
-				//Stuffy selectedStuffy = stuffies[selectionNbr];
-				Stuffy selectedStuffy = null;
-				for (Stuffy s: stuffies) {
-					// compare id to selectionNbr
-					if (s.getId()==selectionNbr) {
-						// that's our stuffy!
-						selectedStuffy = s;
-					}
-				}
-				
-				// 3)  Display the selected stuffy
-				System.out.println("Congratulations, you have a "+selectedStuffy.getSize() +
-						", "+selectedStuffy.getColor()+" "+selectedStuffy.getType()+
-						" stuffy!!!!");
-				
-				
-			}
-			else if (choice.equalsIgnoreCase("a")) {
-				// add a stuffy
-				int id = Console.getInt("Stuffy ID:  ");
-				String t = Console.getRequiredString("Stuffy Type:  ");
-				String c = Console.getRequiredString("Stuffy Color:  ");
-				String s = Console.getRequiredString("Stuffy Size:  ");
-				int l = Console.getInt("Stuffy # limbs:  ");
-				Stuffy stuffy = new Stuffy(id,t,c,s,l);
-				stuffies.add(stuffy);
-			}
-			
-		}
-		
-
-		System.out.println("Bye");
-	}
-	
-	private static String getMenuOptions() {
-		String s = "Menu Options\n" +
-					"S - Search for a Stuffy\n" +
-					"A - Add a Stuffy\n" +
-					"X - Exit\n";
-		return s;
+		System.out.println(sb.toString());
 	}
 
+	private static void addStuffy() {
+		String type = Console.getRequiredString("Enter Type: ");
+		String color = Console.getRequiredString("Enter color: ");
+		String size = Console.getRequiredString("Enter size: ");
+		int limbs = Console.getInt("Enter limbs: ");
+
+		Stuffy s = new Stuffy(type, color, size, limbs);
+		if (stuffyDAO.add(s)) {
+			System.out.println("Product  " + s.getType() + "successfully added");
+		} else {
+			System.out.println("Error adding product");
+		}
+	}
+
+	private static void deleteStuffy() {
+		System.out.println("Delete stuffy!!");
+		int id = Console.getInt("Enter stuffy id to delete: ");
+		// get a product for the code the user entered
+		
+		Stuffy s = stuffyDAO.get(id);
+		
+		if (s == null) {
+			System.out.println("invalid id.");
+		} else {
+			if (stuffyDAO.delete(s)) {
+				System.out.println("deleting" + s + " was successful");
+			} else {
+				System.out.println("error deleting product");
+			}
+
+		}
+
+	}
 }
