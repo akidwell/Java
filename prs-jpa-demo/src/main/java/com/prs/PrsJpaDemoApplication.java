@@ -6,9 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.prs.business.Product;
+import com.prs.business.PurchaseRequest;
+import com.prs.business.PurchaseRequestLineItem;
 import com.prs.business.User;
 import com.prs.business.Vendor;
 import com.prs.db.ProductDB;
+import com.prs.db.PurchaseRequestDB;
+import com.prs.db.PurchaseRequestLineItemDB;
 import com.prs.db.UserDB;
 import com.prs.db.VendorDB;
 import com.prs.util.Console;
@@ -32,7 +36,13 @@ public class PrsJpaDemoApplication {
 
 			} else if (action.equalsIgnoreCase("products")) {
 				displayAllProducts();
+				
+			} else if (action.equalsIgnoreCase("pr")) {
+				displayAllPurchaseRequest();
 
+			} else if (action.equalsIgnoreCase("prli")) {
+				displayAllPurchaseRequestLineItem();
+				
 			} else if (action.equalsIgnoreCase("help")) {
 				displayMenu();
 
@@ -50,6 +60,8 @@ public class PrsJpaDemoApplication {
 		System.out.println("vendors- list all vendors");
 		System.out.println("users-   list all users");
 		System.out.println("products- list all products");
+		System.out.println("pr- list all purchase request");
+		System.out.println("Prli- list all purchase request line items");
 		
 
 	}
@@ -113,20 +125,39 @@ public class PrsJpaDemoApplication {
 		}
 		System.out.println(sb.toString());
 	}
+		
+		public static void displayAllPurchaseRequest() {
+			
+			List<PurchaseRequest> pr = PurchaseRequestDB.getAll();
+			
+			if (pr!=null) {
+				for (PurchaseRequest p:  pr) {
+					System.out.println(p);
+				}
+			}
+			else  {
+				System.out.println("purchase requests null");
+			}
+			
+		}
+		
+	public static void displayAllPurchaseRequestLineItem() {
+		
+			List<PurchaseRequestLineItem> prli = PurchaseRequestLineItemDB.getAll();
+			if (prli!=null) {
+				for (PurchaseRequestLineItem p1:  prli) {
+					System.out.println(p1);
+				}
+			}
+			else  {
+				System.out.println("purchase request line items null");
+			}
+			
+		}
+	
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	private static void addUser() {
 		String userName = Console.getRequiredString("Enter userName: ");
