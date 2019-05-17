@@ -6,7 +6,7 @@ import java.util.List;
 import business.Contact;
 import business.TestContact;
 
-public class ContactApp {
+public class LambdaDemoApp {
 
 	public static void main(String[] args) {
 
