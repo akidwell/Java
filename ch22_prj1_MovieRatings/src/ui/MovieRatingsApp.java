@@ -53,32 +53,32 @@ public class MovieRatingsApp {
 					break;
 				case 2:		// View top rated movies
 					filteredMovies = mc.filterMovies(m -> m.getRating()>=4.0);
-					Console.println("Movies rated 4.0 or higher");
-					Console.println("==========================");
+					System.out.println("Movies rated 4.0 or higher");
+					System.out.println("==========================");
 					filteredMovies.stream().forEach(System.out::println);
 					break;
 				case 3:		// View most recent movies (movies released within last 10 years)
 					int yearRange = LocalDate.now().getYear() - 10;
 					filteredMovies = mc.filterMovies(m -> m.getYear()>=yearRange);
-					Console.println("Movies released in last 10 years");
-					Console.println("================================");
+					System.out.println("Movies released in last 10 years");
+					System.out.println("================================");
 					filteredMovies.stream().forEach(System.out::println);
 					break;
 				case 4:
-					Console.println("All movies");
-					Console.println("==========");
+					System.out.println("All movies");
+					System.out.println("==========");
 					mc.getMovieList().stream().forEach(System.out::println);
 					break;
 				case 5:		// View ratings
-					Console.println("Movie rating data");
-					Console.println("=================");
-					Console.println("# of movies:  "+mc.getSize());
-					Console.println("lowest rating:  "+mc.getLowestRating());
-					Console.println("highest rating:  "+mc.gethighestRating());
-					Console.println("average rating:  "+mc.getAverageRating());
+					System.out.println("Movie rating data");
+					System.out.println("=================");
+					System.out.println("# of movies:  "+mc.getSize());
+					System.out.println("lowest rating:  "+mc.getLowestRating());
+					System.out.println("highest rating:  "+mc.gethighestRating());
+					System.out.println("average rating:  "+mc.getAverageRating());
 					break;
 				case 6:
-					Console.println("Goodbye!");
+					System.out.println("Goodbye!");
 					break;
 			}
 		

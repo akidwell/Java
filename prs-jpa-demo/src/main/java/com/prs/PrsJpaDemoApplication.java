@@ -30,19 +30,19 @@ public class PrsJpaDemoApplication {
 
 			if (action.equalsIgnoreCase("users")) {
 				displayAllUsers();
-				
+
 			} else if (action.equalsIgnoreCase("vendors")) {
 				displayAllVendors();
 
 			} else if (action.equalsIgnoreCase("products")) {
 				displayAllProducts();
-				
+
 			} else if (action.equalsIgnoreCase("pr")) {
 				displayAllPurchaseRequest();
 
 			} else if (action.equalsIgnoreCase("prli")) {
 				displayAllPurchaseRequestLineItem();
-				
+
 			} else if (action.equalsIgnoreCase("help")) {
 				displayMenu();
 
@@ -62,7 +62,6 @@ public class PrsJpaDemoApplication {
 		System.out.println("products- list all products");
 		System.out.println("pr- list all purchase request");
 		System.out.println("Prli- list all purchase request line items");
-		
 
 	}
 
@@ -71,7 +70,7 @@ public class PrsJpaDemoApplication {
 		System.out.println("================");
 		List<User> users = UserDB.getAll();
 		StringBuilder sb = new StringBuilder();
-		for (User u: users) {
+		for (User u : users) {
 			sb.append(StringUtils.padWithSpaces(Integer.toString(u.getId()), 5));
 			sb.append(StringUtils.padWithSpaces(u.getUserName(), 15));
 			sb.append(StringUtils.padWithSpaces(u.getPassword(), 15));
@@ -87,13 +86,13 @@ public class PrsJpaDemoApplication {
 		}
 		System.out.println(sb.toString());
 	}
-	
+
 	private static void displayAllVendors() {
 		System.out.println("vendor list:  ");
 		System.out.println("================");
 		List<Vendor> vendors = VendorDB.getAll();
 		StringBuilder sb = new StringBuilder();
-		for (Vendor v: vendors) {
+		for (Vendor v : vendors) {
 			sb.append(StringUtils.padWithSpaces(Integer.toString(v.getId()), 5));
 			sb.append(StringUtils.padWithSpaces(v.getCode(), 15));
 			sb.append(StringUtils.padWithSpaces(v.getName(), 15));
@@ -109,13 +108,13 @@ public class PrsJpaDemoApplication {
 		}
 		System.out.println(sb.toString());
 	}
-	
+
 	private static void displayAllProducts() {
 		System.out.println("product list:  ");
 		System.out.println("================");
 		List<Product> products = ProductDB.getAll();
 		StringBuilder sb = new StringBuilder();
-		for (Product p: products) {
+		for (Product p : products) {
 			sb.append(StringUtils.padWithSpaces(Integer.toString(p.getId()), 5));
 			sb.append(StringUtils.padWithSpaces(p.getVendor().getName(), 20));
 			sb.append(StringUtils.padWithSpaces(p.getPartNumber(), 15));
@@ -125,40 +124,34 @@ public class PrsJpaDemoApplication {
 		}
 		System.out.println(sb.toString());
 	}
-		
-		public static void displayAllPurchaseRequest() {
-			
-			List<PurchaseRequest> pr = PurchaseRequestDB.getAll();
-			
-			if (pr!=null) {
-				for (PurchaseRequest p:  pr) {
-					System.out.println(p);
-				}
+
+	public static void displayAllPurchaseRequest() {
+
+		List<PurchaseRequest> pr = PurchaseRequestDB.getAll();
+
+		if (pr != null) {
+			for (PurchaseRequest p : pr) {
+				System.out.println(p);
 			}
-			else  {
-				System.out.println("purchase requests null");
-			}
-			
+		} else {
+			System.out.println("purchase requests null");
 		}
-		
+
+	}
+
 	public static void displayAllPurchaseRequestLineItem() {
-		
-			List<PurchaseRequestLineItem> prli = PurchaseRequestLineItemDB.getAll();
-			if (prli!=null) {
-				for (PurchaseRequestLineItem p1:  prli) {
-					System.out.println(p1);
-				}
+
+		List<PurchaseRequestLineItem> prli = PurchaseRequestLineItemDB.getAll();
+		if (prli != null) {
+			for (PurchaseRequestLineItem p1 : prli) {
+				System.out.println(p1);
 			}
-			else  {
-				System.out.println("purchase request line items null");
-			}
-			
+		} else {
+			System.out.println("purchase request line items null");
 		}
-	
-	
 
+	}
 
-	
 	private static void addUser() {
 		String userName = Console.getRequiredString("Enter userName: ");
 		String password = Console.getRequiredString("Enter password: ");
@@ -169,16 +162,18 @@ public class PrsJpaDemoApplication {
 		String choice = Console.getChoiceString("Will the user be a reviewer?", "y", "n");
 		boolean isReviewer = false;
 		if (choice.equalsIgnoreCase("y")) {
-			 isReviewer= true;
+			isReviewer = true;
 		} else if (choice.equalsIgnoreCase("n")) {
-			 isReviewer= false; }
+			isReviewer = false;
+		}
 		choice = Console.getChoiceString("Will the user be a admin?", "y", "n");
 		boolean isAdmin = false;
 		if (choice.equalsIgnoreCase("y")) {
-			 isAdmin= true;
+			isAdmin = true;
 		} else if (choice.equalsIgnoreCase("n")) {
-			 isAdmin= false; }
-		
+			isAdmin = false;
+		}
+
 		User u = new User(userName, password, firstName, lastName, phoneNumber, email, isReviewer, isAdmin);
 		if (UserDB.add(u)) {
 			System.out.println("User  " + u.getId() + "successfully added");
@@ -189,7 +184,7 @@ public class PrsJpaDemoApplication {
 
 	private static void deleteUser() {
 		System.out.println("Delete User!!");
-		String email = Console.getRequiredString("enter email to delete: ");	
+		String email = Console.getRequiredString("enter email to delete: ");
 		User u = UserDB.selectUser(email);
 		if (u == null) {
 			System.out.println("invalid email.");
@@ -203,10 +198,4 @@ public class PrsJpaDemoApplication {
 
 	}
 }
-	// TODO Auto-generated method stub
-
-	
-	
-	
-	
-	
+// TODO Auto-generated method stub

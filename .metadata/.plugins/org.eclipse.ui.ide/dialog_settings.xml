@@ -106,9 +106,12 @@
 	</list>
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Repos\cloned-repos\java-instruction-bc201901\Seansbootcamp_calculator"/>
+			<item value="C:\Repos\cloned-repos\java-instruction-bc201901\JUnitPiratesStart"/>
+			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch22_ex1_BookCatalog"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch15_ex1_CustomerManager"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch11_ex1_MonthSales"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\ex_starts\ch09_ex1_DisplayableTest"/>
@@ -126,7 +129,6 @@
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch07_Product"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch10_Product"/>
 			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps\ch03_InvoiceBigDecimal"/>
-			<item value="C:\Users\MaxTech\Desktop\java\eclipse\book_apps"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
